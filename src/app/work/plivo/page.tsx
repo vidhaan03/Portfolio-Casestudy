@@ -121,9 +121,11 @@ export default function PlivoCaseStudy() {
 
       <h2>Research &amp; framing</h2>
       <p>
-        I studied how mature messaging platforms, <strong>Twilio, Bandwidth,
-        Sinch</strong>, surface compliance state, and where they fall short.
-        Then I sat with the Product Head of Messaging and walked the full
+        I studied how <strong>Twilio, Bandwidth, and Sinch</strong> surface
+        compliance state, and noticed they all design for developers managing
+        customers, not for the customers themselves.{" "}
+        <strong>Plivo&apos;s redesign moved the other way.</strong> Then I sat
+        with the Product Head of Messaging and walked the full
         lifecycle: a customer registers a brand, submits a campaign under it,
         goes through internal vetting (info cross-check, brand volume), then
         carrier vetting, then lands in one of three terminal states ,
