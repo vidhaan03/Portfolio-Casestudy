@@ -1,18 +1,25 @@
-# Case study HTML files
+# Case study assets
 
-Drop each case study's HTML file here. The filename should match the `slug`
-field in `src/content/case-studies.ts` (or set `htmlFile` explicitly).
-
-Example:
+Drop images for each case study into a subfolder named after its slug:
 
 ```
 public/case-studies/
-├── acme-redesign.html
-├── acme-redesign/         # optional asset folder (images, etc.)
-│   ├── hero.png
-│   └── flow.svg
-└── another-study.html
+├── mrig/
+│   ├── tryon.png
+│   ├── onboarding-1.png
+│   └── ...
+└── plivo/
+    ├── 10dlc.png
+    ├── drafts.png
+    └── ...
 ```
 
-Inside the HTML, reference assets with absolute paths from `/case-studies/...`
-(e.g. `<img src="/case-studies/acme-redesign/hero.png">`).
+Inside a case study page, reference them with absolute paths:
+
+```tsx
+<img src="/case-studies/mrig/tryon.png" alt="..." />
+```
+
+The case study React pages live at `src/app/work/<slug>/page.tsx`. They
+currently use labeled placeholders — swap them for real `<img>` tags once
+files are in place.

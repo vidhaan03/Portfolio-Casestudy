@@ -1,18 +1,22 @@
 /**
- * Case studies manifest.
+ * Case studies manifest, drives the landing-page grid and "next study" nav.
  *
  * To add a new case study:
- *   1. Drop the HTML file into `public/case-studies/<slug>.html`
- *      (any assets it references — images, css — can sit next to it).
- *   2. Add an entry to the array below. Newest first.
+ *   1. Create a page at `src/app/work/<slug>/page.tsx`
+ *      (and, if you want a scoped editorial look, a `<slug>.module.css`
+ *      alongside it, see /work/mrig and /work/plivo for templates).
+ *   2. Add an entry below. Newest first.
  *
- * The page at /work/<slug> will render the HTML inside a framed container.
+ * Drop images into `public/case-studies/<slug>/...` and reference them with
+ * absolute paths like `/case-studies/mrig/hero.png`.
  */
 
 export type CaseStudy = {
   slug: string;
+  /** Route the card links to. Usually `/work/<slug>`. */
+  href: string;
   title: string;
-  /** Short blurb shown on the landing page card. */
+  /** Short blurb shown on the landing-page card. */
   summary: string;
   /** e.g. "Product Design", "Design + Engineering" */
   role: string;
@@ -20,29 +24,40 @@ export type CaseStudy = {
   year: string;
   /** Optional client / org / context label */
   client?: string;
-  /** Optional hero image path under /public, e.g. "/case-studies/foo/cover.png" */
+  /** Optional hero image path under /public */
   cover?: string;
-  /** Accent color used for the card hover state. Any valid CSS color. */
+  /** Accent color for card hover/tint. Any valid CSS color. */
   accent?: string;
   /** Tags shown on the card. */
   tags?: string[];
-  /** Filename inside /public/case-studies/. Defaults to `${slug}.html`. */
-  htmlFile?: string;
 };
 
 export const caseStudies: CaseStudy[] = [
-  // Example — replace with your real entries once you drop the HTML in:
-  // {
-  //   slug: "acme-redesign",
-  //   title: "Redesigning Acme's onboarding",
-  //   summary:
-  //     "Cut activation drop-off by 38% by rebuilding the first-run experience around a single core action.",
-  //   role: "Product Design + Front-end",
-  //   year: "2025",
-  //   client: "Acme Inc.",
-  //   tags: ["Onboarding", "Web", "0→1"],
-  //   accent: "#FF6A3D",
-  // },
+  {
+    slug: "plivo",
+    href: "/work/plivo",
+    title:
+      "Rebuilding Plivo's 10DLC, Campaigns, and Compliance console",
+    summary:
+      "Turned a regulatory black box into a console PMs and CTOs at brands like Uber, Zomato, and Meta could read at a glance.",
+    role: "Product & Visual Design",
+    year: "2025",
+    client: "Plivo · CX Platform",
+    cover: "/case-studies/plivo/10dlc.png",
+    tags: ["Enterprise", "Compliance", "Shipped"],
+  },
+  {
+    slug: "mrig",
+    href: "/work/mrig",
+    title: "Mrig AI, a virtual try-on for every marketplace",
+    summary:
+      "iOS + Android app. Upload your photo, pick a marketplace, see how clothes will look before you buy. Co-built with Aniket Khandelwal.",
+    role: "Design + Co-builder",
+    year: "2025",
+    client: "Mrig AI",
+    cover: "/case-studies/mrig/tryon.jpeg",
+    tags: ["0→1", "Mobile", "AI"],
+  },
 ];
 
 export function getCaseStudy(slug: string): CaseStudy | undefined {
