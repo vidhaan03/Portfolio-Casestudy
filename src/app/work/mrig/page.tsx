@@ -32,6 +32,8 @@ export default function MrigCaseStudy() {
         src="/case-studies/mrig/tryon.jpeg"
         alt="Mrig try-on screen showing a person wearing a piece they haven't bought yet."
         caption="See yourself in a piece you haven't bought yet."
+        size="sm"
+        align="left"
       />
 
       <h2>What it does</h2>

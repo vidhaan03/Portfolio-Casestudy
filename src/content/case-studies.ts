@@ -45,6 +45,7 @@ export const caseStudies: CaseStudy[] = [
     client: "Plivo · CX Platform",
     cover: "/case-studies/plivo/10dlc.png",
     tags: ["Enterprise", "Compliance", "Shipped"],
+    accent: "#1e3a8a",
   },
   {
     slug: "mrig",
@@ -57,6 +58,7 @@ export const caseStudies: CaseStudy[] = [
     client: "Mrig AI",
     cover: "/case-studies/mrig/tryon.jpeg",
     tags: ["0→1", "Mobile", "AI"],
+    accent: "#9a1b1b",
   },
 ];
 

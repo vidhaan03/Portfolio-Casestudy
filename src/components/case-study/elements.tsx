@@ -11,6 +11,8 @@ export function Shot({
   label,
   caption,
   aspect = "16/10",
+  size = "full",
+  align = "center",
 }: {
   /** Absolute path under /public, e.g. "/case-studies/mrig/tryon.jpeg". */
   src?: string;
@@ -19,9 +21,27 @@ export function Shot({
   label?: string;
   caption?: ReactNode;
   aspect?: "16/10" | "4/3" | "1/1" | "3/4";
+  /** Display width. "full" fills the prose column; smaller sizes constrain it. */
+  size?: "xs" | "sm" | "md" | "full";
+  /** Horizontal alignment when size < full. */
+  align?: "left" | "center" | "right";
 }) {
+  const sizeClass: Record<string, string> = {
+    xs: "max-w-[200px]",
+    sm: "max-w-[280px]",
+    md: "max-w-[440px]",
+    full: "max-w-full",
+  };
+  const alignClass: Record<string, string> = {
+    left: "mr-auto ml-0",
+    center: "mx-auto",
+    right: "ml-auto mr-0",
+  };
+
   return (
-    <figure className="my-10 not-prose">
+    <figure
+      className={`my-10 not-prose ${sizeClass[size]} ${alignClass[align]}`}
+    >
       {src ? (
         // eslint-disable-next-line @next/next/no-img-element
         <img

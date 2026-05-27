@@ -11,13 +11,17 @@ export default function Home() {
       {/* Work */}
       <section id="work" className="pb-24 scroll-mt-20">
         <Reveal>
-          <div className="flex items-baseline justify-between mb-10">
-            <h2 className="text-2xl font-medium tracking-tight">
-              Selected work
-            </h2>
-            <span className="text-sm text-neutral-500">
-              {caseStudies.length} case stud
-              {caseStudies.length === 1 ? "y" : "ies"}
+          <div className="flex items-end justify-between mb-12 gap-6">
+            <div>
+              <p className="text-xs uppercase tracking-[0.18em] text-neutral-500 mb-3 font-medium">
+                Selected work
+              </p>
+              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-neutral-900 dark:text-neutral-50">
+                Case studies
+              </h2>
+            </div>
+            <span className="text-sm text-neutral-500 pb-1">
+              {String(caseStudies.length).padStart(2, "0")} total
             </span>
           </div>
         </Reveal>
@@ -35,7 +39,7 @@ export default function Home() {
             </div>
           </Reveal>
         ) : (
-          <ul className="grid gap-6 sm:grid-cols-2">
+          <ul className="grid grid-cols-1 md:grid-cols-2 gap-12 sm:gap-16">
             {caseStudies.map((cs, i) => (
               <WorkCard key={cs.slug} cs={cs} index={i} />
             ))}

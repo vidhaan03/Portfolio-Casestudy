@@ -139,7 +139,7 @@ export default function PlivoCaseStudy() {
         shaped the language and the hierarchy on every screen.
       </p>
 
-      <BrainstormNote date="Aug 2024" title="Reframing, who's actually here?">
+      <BrainstormNote date="May 2026" title="Reframing, who's actually here?">
         <BrainstormColumn heading="Old framing">
           <BrainstormPoint>
             Treat the console as an{" "}
@@ -228,106 +228,189 @@ export default function PlivoCaseStudy() {
         <svg
           viewBox="0 0 720 970"
           xmlns="http://www.w3.org/2000/svg"
-          fontFamily="ui-sans-serif, system-ui, sans-serif"
-          fontSize="13"
+          fontFamily="var(--font-caveat), cursive"
+          fontSize="20"
           style={{ width: "100%", height: "auto", display: "block" }}
         >
           <defs>
             <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
-              <path d="M 0 0 L 10 5 L 0 10 z" fill="#181818" />
+              <path d="M 0 0 L 10 5 L 0 10 z" fill="#3f3f46" />
             </marker>
             <marker id="arrG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
-              <path d="M 0 0 L 10 5 L 0 10 z" fill="#181818" />
+              <path d="M 0 0 L 10 5 L 0 10 z" fill="#3f3f46" />
             </marker>
+            {/* Hand-drawn filter: turbulence noise displaces every stroke so
+                straight lines wobble subtly like a pen drew them. */}
+            <filter
+              id="sketch"
+              x="-2%"
+              y="-2%"
+              width="104%"
+              height="104%"
+            >
+              <feTurbulence
+                type="fractalNoise"
+                baseFrequency="0.025"
+                numOctaves="2"
+                seed="3"
+                result="noise"
+              />
+              <feDisplacementMap
+                in="SourceGraphic"
+                in2="noise"
+                scale="2.4"
+                xChannelSelector="R"
+                yChannelSelector="G"
+              />
+            </filter>
           </defs>
 
-          <g fontSize="11" fill="#6b6b6b">
-            <rect x="20" y="18" width="14" height="14" rx="3" fill="#ffffff" stroke="#181818" strokeWidth="1.5" />
-            <text x="42" y="30">Customer</text>
-            <rect x="120" y="18" width="14" height="14" rx="3" fill="#ffffff" stroke="#6b6b6b" strokeWidth="1.5" />
-            <text x="142" y="30">Plivo internal</text>
-            <rect x="240" y="18" width="14" height="14" rx="3" fill="#ffffff" stroke="#8c6a3a" strokeWidth="1.5" />
-            <text x="262" y="30">Carrier (TCR)</text>
-            <rect x="360" y="18" width="14" height="14" rx="3" fill="#181818" />
-            <text x="382" y="30">Introduced in redesign</text>
-          </g>
-          <line x1="20" y1="50" x2="700" y2="50" stroke="#e5e5e5" strokeWidth="1" />
-
-          <rect x="260" y="68" width="200" height="50" rx="8" fill="#ffffff" stroke="#181818" strokeWidth="1.5" />
-          <text x="360" y="98" textAnchor="middle" fill="#181818">1 · Register Brand</text>
-          <line x1="360" y1="118" x2="360" y2="146" stroke="#181818" strokeWidth="1.2" markerEnd="url(#arr)" />
-
-          <rect x="260" y="148" width="200" height="50" rx="8" fill="#ffffff" stroke="#181818" strokeWidth="1.5" />
-          <text x="360" y="178" textAnchor="middle" fill="#181818">2 · Submit Campaign</text>
-          <line x1="360" y1="198" x2="360" y2="226" stroke="#181818" strokeWidth="1.2" markerEnd="url(#arr)" />
-
-          <rect x="240" y="228" width="240" height="62" rx="8" fill="#ffffff" stroke="#6b6b6b" strokeWidth="1.5" />
-          <text x="360" y="254" textAnchor="middle" fill="#181818">3 · Plivo Internal Vetting</text>
-          <text x="360" y="272" textAnchor="middle" fill="#6b6b6b" fontSize="11">info cross-check · brand volume</text>
-          <line x1="360" y1="290" x2="360" y2="318" stroke="#181818" strokeWidth="1.2" markerEnd="url(#arr)" />
-
-          <polygon points="360,320 425,365 360,410 295,365" fill="#ffffff" stroke="#6b6b6b" strokeWidth="1.5" />
-          <text x="360" y="370" textAnchor="middle" fill="#181818">Pass?</text>
-
-          <text x="370" y="428" fill="#6b6b6b" fontSize="11">yes</text>
-          <line x1="360" y1="410" x2="360" y2="438" stroke="#181818" strokeWidth="1.2" markerEnd="url(#arr)" />
-
-          <text x="285" y="358" fill="#6b6b6b" fontSize="11" textAnchor="end">no</text>
-          <path d="M 295 365 L 140 365 L 140 690" fill="none" stroke="#181818" strokeWidth="1.2" />
-          <line x1="140" y1="690" x2="198" y2="690" stroke="#181818" strokeWidth="1.2" markerEnd="url(#arr)" />
-
-          <rect x="240" y="440" width="240" height="60" rx="8" fill="#ffffff" stroke="#8c6a3a" strokeWidth="1.5" />
-          <text x="360" y="465" textAnchor="middle" fill="#181818">4 · Carrier Vetting</text>
-          <text x="360" y="483" textAnchor="middle" fill="#6b6b6b" fontSize="11">submitted via TCR</text>
-          <line x1="360" y1="500" x2="360" y2="528" stroke="#181818" strokeWidth="1.2" markerEnd="url(#arr)" />
-
-          <polygon points="360,530 435,575 360,620 285,575" fill="#ffffff" stroke="#6b6b6b" strokeWidth="1.5" />
-          <text x="360" y="580" textAnchor="middle" fill="#181818">Outcome</text>
-
-          <text x="448" y="568" fill="#6b6b6b" fontSize="11">verified</text>
-          <line x1="435" y1="575" x2="553" y2="575" stroke="#181818" strokeWidth="1.2" markerEnd="url(#arr)" />
-          <rect x="555" y="553" width="140" height="44" rx="8" fill="#f5f5f5" stroke="#181818" strokeWidth="1.5" />
-          <text x="625" y="580" textAnchor="middle" fill="#181818">Live / Approved</text>
-
-          <text x="370" y="640" fill="#6b6b6b" fontSize="11">rejected · resubmit</text>
-          <line x1="360" y1="620" x2="360" y2="648" stroke="#181818" strokeWidth="1.2" markerEnd="url(#arr)" />
-
-          <rect x="200" y="650" width="320" height="80" rx="8" fill="#181818" />
-          <text x="360" y="676" textAnchor="middle" fill="#ffffff" fontWeight="600">5 · Inline Rejection Reason</text>
-          <text x="360" y="696" textAnchor="middle" fill="#d4d4d4" fontSize="11">shown directly below the campaign card</text>
-          <text x="360" y="712" textAnchor="middle" fill="#d4d4d4" fontSize="11">no collapsibles · no API lookup · no support ping</text>
-
-          <line x1="360" y1="730" x2="360" y2="758" stroke="#181818" strokeWidth="1.2" />
-          <line x1="200" y1="758" x2="520" y2="758" stroke="#181818" strokeWidth="1.2" />
-          <line x1="200" y1="758" x2="200" y2="788" stroke="#181818" strokeWidth="1.2" markerEnd="url(#arr)" />
-          <line x1="520" y1="758" x2="520" y2="788" stroke="#181818" strokeWidth="1.2" markerEnd="url(#arr)" />
-
-          <rect x="100" y="790" width="200" height="60" rx="8" fill="#181818" />
-          <text x="200" y="814" textAnchor="middle" fill="#ffffff" fontWeight="600">6a · Edit &amp; Resubmit</text>
-          <text x="200" y="832" textAnchor="middle" fill="#d4d4d4" fontSize="11">fix what was flagged · resend</text>
-
-          <rect x="420" y="790" width="200" height="60" rx="8" fill="#181818" />
-          <text x="520" y="814" textAnchor="middle" fill="#ffffff" fontWeight="600">6b · Archive</text>
-          <text x="520" y="832" textAnchor="middle" fill="#d4d4d4" fontSize="11">explicit · irreversible</text>
-
-          <path
-            d="M 100 820 L 60 820 L 60 173 L 258 173"
+          {/* Default sketchy stroke style + displacement filter applied to
+              all shapes/strokes/text below. */}
+          <g
+            stroke="#3f3f46"
+            strokeLinecap="round"
+            strokeLinejoin="round"
             fill="none"
-            stroke="#181818"
-            strokeWidth="1.4"
-            strokeDasharray="5 4"
-            markerEnd="url(#arrG)"
-          />
-          <text
-            x="50"
-            y="500"
-            fill="#6b6b6b"
-            fontSize="11"
-            transform="rotate(-90, 50, 500)"
-            textAnchor="middle"
+            filter="url(#sketch)"
           >
-            loops back to Submit Campaign
-          </text>
+            {/* Legend */}
+            <g fontSize="17" fill="#6b6b6b" stroke="none">
+              <rect x="20" y="18" width="14" height="14" rx="3" fill="#ffffff" stroke="#3f3f46" strokeWidth="1.5" />
+              <text x="42" y="32" fill="#3f3f46">Customer</text>
+              <rect x="150" y="18" width="14" height="14" rx="3" fill="#ffffff" stroke="#a1a1aa" strokeWidth="1.5" />
+              <text x="172" y="32" fill="#3f3f46">Plivo internal</text>
+              <rect x="290" y="18" width="14" height="14" rx="3" fill="#ffffff" stroke="#a78b5b" strokeWidth="1.5" />
+              <text x="312" y="32" fill="#3f3f46">Carrier (TCR)</text>
+              <rect x="430" y="18" width="14" height="14" rx="3" fill="#3f3f46" stroke="none" />
+              <text x="452" y="32" fill="#3f3f46">Introduced in redesign</text>
+            </g>
+            <line x1="20" y1="52" x2="700" y2="52" stroke="#e5e5e5" strokeWidth="1" />
+
+            {/* 1 · Register Brand */}
+            <rect x="260" y="68" width="200" height="54" rx="10" fill="#ffffff" strokeWidth="1.5" />
+            <text x="360" y="103" textAnchor="middle" fill="#3f3f46" stroke="none">
+              1 · Register Brand
+            </text>
+            <line x1="360" y1="122" x2="360" y2="148" strokeWidth="1.4" markerEnd="url(#arr)" />
+
+            {/* 2 · Submit Campaign */}
+            <rect x="260" y="150" width="200" height="54" rx="10" fill="#ffffff" strokeWidth="1.5" />
+            <text x="360" y="185" textAnchor="middle" fill="#3f3f46" stroke="none">
+              2 · Submit Campaign
+            </text>
+            <line x1="360" y1="204" x2="360" y2="230" strokeWidth="1.4" markerEnd="url(#arr)" />
+
+            {/* 3 · Plivo Internal Vetting */}
+            <rect x="240" y="232" width="240" height="66" rx="10" fill="#ffffff" stroke="#a1a1aa" strokeWidth="1.5" />
+            <text x="360" y="262" textAnchor="middle" fill="#3f3f46" stroke="none">
+              3 · Plivo Internal Vetting
+            </text>
+            <text x="360" y="284" textAnchor="middle" fill="#71717a" fontSize="15" stroke="none">
+              info cross-check · brand volume
+            </text>
+            <line x1="360" y1="298" x2="360" y2="322" strokeWidth="1.4" markerEnd="url(#arr)" />
+
+            {/* Decision: Pass? */}
+            <polygon points="360,324 425,369 360,414 295,369" fill="#ffffff" stroke="#a1a1aa" strokeWidth="1.5" />
+            <text x="360" y="376" textAnchor="middle" fill="#3f3f46" stroke="none">
+              Pass?
+            </text>
+            <text x="372" y="436" fill="#71717a" fontSize="15" stroke="none">
+              yes
+            </text>
+            <line x1="360" y1="414" x2="360" y2="442" strokeWidth="1.4" markerEnd="url(#arr)" />
+
+            <text x="285" y="362" fill="#71717a" fontSize="15" textAnchor="end" stroke="none">
+              no
+            </text>
+            <path d="M 295 369 L 140 369 L 140 694" strokeWidth="1.4" />
+            <line x1="140" y1="694" x2="198" y2="694" strokeWidth="1.4" markerEnd="url(#arr)" />
+
+            {/* 4 · Carrier Vetting */}
+            <rect x="240" y="444" width="240" height="64" rx="10" fill="#ffffff" stroke="#a78b5b" strokeWidth="1.5" />
+            <text x="360" y="473" textAnchor="middle" fill="#3f3f46" stroke="none">
+              4 · Carrier Vetting
+            </text>
+            <text x="360" y="494" textAnchor="middle" fill="#71717a" fontSize="15" stroke="none">
+              submitted via TCR
+            </text>
+            <line x1="360" y1="508" x2="360" y2="532" strokeWidth="1.4" markerEnd="url(#arr)" />
+
+            {/* Decision: Outcome */}
+            <polygon points="360,534 435,579 360,624 285,579" fill="#ffffff" stroke="#a1a1aa" strokeWidth="1.5" />
+            <text x="360" y="586" textAnchor="middle" fill="#3f3f46" stroke="none">
+              Outcome
+            </text>
+
+            <text x="448" y="572" fill="#71717a" fontSize="15" stroke="none">
+              verified
+            </text>
+            <line x1="435" y1="579" x2="553" y2="579" strokeWidth="1.4" markerEnd="url(#arr)" />
+            <rect x="555" y="555" width="140" height="48" rx="10" fill="#f5f5f5" strokeWidth="1.5" />
+            <text x="625" y="586" textAnchor="middle" fill="#3f3f46" stroke="none">
+              Live / Approved
+            </text>
+
+            <text x="372" y="648" fill="#71717a" fontSize="15" stroke="none">
+              rejected · resubmit
+            </text>
+            <line x1="360" y1="624" x2="360" y2="652" strokeWidth="1.4" markerEnd="url(#arr)" />
+
+            {/* 5 · Inline Rejection Reason — introduced in redesign (dark) */}
+            <rect x="200" y="654" width="320" height="84" rx="10" fill="#3f3f46" stroke="none" />
+            <text x="360" y="682" textAnchor="middle" fill="#ffffff" stroke="none" fontSize="20">
+              5 · Inline Rejection Reason
+            </text>
+            <text x="360" y="704" textAnchor="middle" fill="#d4d4d4" fontSize="15" stroke="none">
+              shown directly below the campaign card
+            </text>
+            <text x="360" y="722" textAnchor="middle" fill="#d4d4d4" fontSize="15" stroke="none">
+              no collapsibles · no API lookup · no support ping
+            </text>
+
+            <line x1="360" y1="738" x2="360" y2="762" strokeWidth="1.4" />
+            <line x1="200" y1="762" x2="520" y2="762" strokeWidth="1.4" />
+            <line x1="200" y1="762" x2="200" y2="790" strokeWidth="1.4" markerEnd="url(#arr)" />
+            <line x1="520" y1="762" x2="520" y2="790" strokeWidth="1.4" markerEnd="url(#arr)" />
+
+            {/* 6a · Edit & Resubmit */}
+            <rect x="100" y="792" width="200" height="64" rx="10" fill="#3f3f46" stroke="none" />
+            <text x="200" y="820" textAnchor="middle" fill="#ffffff" stroke="none">
+              6a · Edit &amp; Resubmit
+            </text>
+            <text x="200" y="840" textAnchor="middle" fill="#d4d4d4" fontSize="15" stroke="none">
+              fix what was flagged · resend
+            </text>
+
+            {/* 6b · Archive */}
+            <rect x="420" y="792" width="200" height="64" rx="10" fill="#3f3f46" stroke="none" />
+            <text x="520" y="820" textAnchor="middle" fill="#ffffff" stroke="none">
+              6b · Archive
+            </text>
+            <text x="520" y="840" textAnchor="middle" fill="#d4d4d4" fontSize="15" stroke="none">
+              explicit · irreversible
+            </text>
+
+            {/* Loop-back from 6a to Submit Campaign */}
+            <path
+              d="M 100 824 L 60 824 L 60 177 L 258 177"
+              strokeWidth="1.4"
+              strokeDasharray="6 5"
+              markerEnd="url(#arrG)"
+            />
+            <text
+              x="48"
+              y="500"
+              fill="#71717a"
+              fontSize="15"
+              transform="rotate(-90, 48, 500)"
+              textAnchor="middle"
+              stroke="none"
+            >
+              loops back to Submit Campaign
+            </text>
+          </g>
         </svg>
       </Diagram>
 
