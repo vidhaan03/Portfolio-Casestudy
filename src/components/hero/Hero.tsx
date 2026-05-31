@@ -9,6 +9,10 @@ import {
 } from "motion/react";
 import { useEffect, useState, useRef } from "react";
 import Link from "next/link";
+import {
+  PassportBooklet,
+  PassportButton,
+} from "@/components/passport/Passport";
 
 const ROTATING_WORDS = ["builds", "ships", "listens", "iterates"];
 const ROTATE_INTERVAL = 2200;
@@ -34,14 +38,34 @@ export function Hero() {
 
   return (
     <section className="relative pt-24 pb-20 sm:pt-32 sm:pb-28">
-      <motion.p
+      {/* 3D passport booklet — sits in the right-side negative space on
+          desktop, hidden on small screens to avoid overlapping the hero
+          text. Click to open the passport panel. */}
+      <motion.div
+        initial={reduced ? false : { opacity: 0, y: 16, rotate: 4 }}
+        animate={{ opacity: 1, y: 0, rotate: 0 }}
+        transition={{
+          duration: 0.9,
+          delay: 0.45,
+          ease: [0.22, 1, 0.36, 1],
+        }}
+        className="hidden lg:block absolute right-2 xl:right-8 top-1/2 -translate-y-1/2 z-10"
+      >
+        <PassportBooklet />
+      </motion.div>
+
+      <motion.div
         initial={reduced ? false : { opacity: 0, y: 8 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-        className="text-sm uppercase tracking-[0.18em] text-neutral-500 mb-6"
+        className="mb-6"
       >
-        Vidhan Dubey
-      </motion.p>
+        <PassportButton
+          className="text-sm uppercase tracking-[0.18em] text-neutral-500 hover:text-neutral-800 dark:hover:text-neutral-200 transition-colors cursor-pointer"
+        >
+          Vidhan Dubey
+        </PassportButton>
+      </motion.div>
 
       <h1 className="text-4xl sm:text-6xl font-medium tracking-tight leading-[1.05]">
         <motion.span
@@ -114,7 +138,7 @@ export function Hero() {
         <MagneticButton href="#work" variant="solid">
           See my work
         </MagneticButton>
-        <MagneticButton href="mailto:vidhandubey03@gmail.com" variant="outline">
+        <MagneticButton href="/contact" variant="outline">
           Get in touch
         </MagneticButton>
       </motion.div>

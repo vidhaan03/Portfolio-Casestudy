@@ -32,6 +32,9 @@ export type CaseStudy = {
   accent?: string;
   /** Tags shown on the card. */
   tags?: string[];
+  /** Short, playful one-liners shown as sticky notes when hovering the
+   * folder on the landing page. 2–4 work best. */
+  quirks?: string[];
 };
 
 export const caseStudies: CaseStudy[] = [
@@ -48,6 +51,12 @@ export const caseStudies: CaseStudy[] = [
     cover: "/case-studies/motion/landing.png",
     tags: ["0→1", "Multi-agent", "Open source"],
     accent: "#0e7490",
+    quirks: [
+      "built in 2 weeks 🛠",
+      "8 seconds per ad ⚡",
+      "no UGC, code only",
+      "14 brand presets",
+    ],
   },
   {
     slug: "plivo",
@@ -63,6 +72,12 @@ export const caseStudies: CaseStudy[] = [
     cover: "/case-studies/plivo/10dlc.png",
     tags: ["Enterprise", "Compliance", "Shipped"],
     accent: "#1e3a8a",
+    quirks: [
+      "shipped to prod 🚀",
+      "killed the collapsibles",
+      "Uber · Zomato · Meta use this",
+      "3 surfaces, 1 console",
+    ],
   },
   {
     slug: "mrig",
@@ -77,6 +92,12 @@ export const caseStudies: CaseStudy[] = [
     cover: "/case-studies/mrig/tryon.jpeg",
     tags: ["0→1", "Mobile", "AI"],
     accent: "#9a1b1b",
+    quirks: [
+      "200+ downloads in 3 days 📈",
+      "8-day design sprint",
+      "Sanskrit for deer 🦌",
+      "App Store + Play Store",
+    ],
   },
 ];
 

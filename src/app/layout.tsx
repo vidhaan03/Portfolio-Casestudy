@@ -1,15 +1,25 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Caveat } from "next/font/google";
+import {
+  Bricolage_Grotesque,
+  JetBrains_Mono,
+  Caveat,
+  Patrick_Hand,
+} from "next/font/google";
 import Link from "next/link";
 import { Cursor } from "@/components/Cursor";
+import {
+  PassportButton,
+  PassportProvider,
+} from "@/components/passport/Passport";
 import "./globals.css";
 
-const geistSans = Geist({
+const bricolage = Bricolage_Grotesque({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  axes: ["opsz", "wdth"],
 });
 
-const geistMono = Geist_Mono({
+const jetbrainsMono = JetBrains_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
@@ -17,6 +27,12 @@ const geistMono = Geist_Mono({
 const caveat = Caveat({
   variable: "--font-caveat",
   subsets: ["latin"],
+});
+
+const patrickHand = Patrick_Hand({
+  variable: "--font-patrick-hand",
+  subsets: ["latin"],
+  weight: "400",
 });
 
 export const metadata: Metadata = {
@@ -33,15 +49,13 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} ${caveat.variable} h-full antialiased`}
+      className={`${bricolage.variable} ${jetbrainsMono.variable} ${caveat.variable} ${patrickHand.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-white text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100">
-        <Cursor />
+        <PassportProvider><Cursor />
         <header className="sticky top-0 z-40 backdrop-blur-md bg-white/70 dark:bg-neutral-950/70 border-b border-neutral-200/60 dark:border-neutral-800/60">
           <nav className="mx-auto max-w-5xl px-6 h-14 flex items-center justify-between">
-            <Link href="/" className="font-medium tracking-tight">
-              Vidhan Dubey
-            </Link>
+            <PassportButton>Vidhan Dubey</PassportButton>
             <div className="flex items-center gap-6 text-sm text-neutral-600 dark:text-neutral-400">
               <Link href="/#work" className="hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors">
                 Work
@@ -49,12 +63,12 @@ export default function RootLayout({
               <Link href="/#about" className="hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors">
                 About
               </Link>
-              <a
-                href="mailto:vidhandubey03@gmail.com"
+              <Link
+                href="/contact"
                 className="hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors"
               >
                 Contact
-              </a>
+              </Link>
             </div>
           </nav>
         </header>
@@ -70,6 +84,7 @@ export default function RootLayout({
             </a>
           </div>
         </footer>
+        </PassportProvider>
       </body>
     </html>
   );
