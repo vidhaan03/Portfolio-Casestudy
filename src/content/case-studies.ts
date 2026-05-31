@@ -18,6 +18,8 @@ export type CaseStudy = {
   title: string;
   /** Short blurb shown on the landing-page card. */
   summary: string;
+  /** Short label shown under the Mac folder icon. Falls back to title. */
+  shortName?: string;
   /** e.g. "Product Design", "Design + Engineering" */
   role: string;
   /** Free-form, e.g. "2025", "Mar 2025" */
@@ -34,8 +36,23 @@ export type CaseStudy = {
 
 export const caseStudies: CaseStudy[] = [
   {
+    slug: "motion",
+    href: "/work/motion",
+    shortName: "motion.saas",
+    title: "motion.saas, prompt to cinematic ad in 8 seconds",
+    summary:
+      "A solo indie tool that turns a prompt into a SaaS launch ad. Multi-agent storyboards orchestrated by a Director agent, rendered programmatically with React Remotion. Built end-to-end in two weeks. Open source.",
+    role: "Designer + Builder (solo)",
+    year: "2026",
+    client: "motion.saas · Indie · OSS",
+    cover: "/case-studies/motion/landing.png",
+    tags: ["0→1", "Multi-agent", "Open source"],
+    accent: "#0e7490",
+  },
+  {
     slug: "plivo",
     href: "/work/plivo",
+    shortName: "Plivo",
     title:
       "Rebuilding Plivo's 10DLC, Campaigns, and Compliance console",
     summary:
@@ -50,6 +67,7 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: "mrig",
     href: "/work/mrig",
+    shortName: "Mrig AI",
     title: "Mrig AI, a virtual try-on for every marketplace",
     summary:
       "iOS + Android app. Upload your photo, pick a marketplace, see how clothes will look before you buy. Co-built with Aniket Khandelwal.",

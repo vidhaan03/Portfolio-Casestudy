@@ -59,7 +59,10 @@ export function Hero() {
           className="block text-neutral-400 dark:text-neutral-500"
         >
           who{" "}
-          <span className="group/word relative inline-block align-baseline">
+          <span
+            data-cursor-trigger
+            className="group/word relative inline-block align-baseline"
+          >
             <AnimatePresence mode="popLayout" initial={false}>
               <motion.span
                 key={ROTATING_WORDS[wordIdx]}

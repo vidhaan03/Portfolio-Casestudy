@@ -1,6 +1,6 @@
 import { caseStudies } from "@/content/case-studies";
 import { Hero } from "@/components/hero/Hero";
-import { WorkCard } from "@/components/work/WorkCard";
+import { MacFolderGrid } from "@/components/work/MacFolderGrid";
 import { Reveal } from "@/components/Reveal";
 
 export default function Home() {
@@ -17,11 +17,11 @@ export default function Home() {
                 Selected work
               </p>
               <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-neutral-900 dark:text-neutral-50">
-                Case studies
+                What I work on
               </h2>
             </div>
             <span className="text-sm text-neutral-500 pb-1">
-              {String(caseStudies.length).padStart(2, "0")} total
+              {String(caseStudies.length).padStart(2, "0")} folders
             </span>
           </div>
         </Reveal>
@@ -39,11 +39,7 @@ export default function Home() {
             </div>
           </Reveal>
         ) : (
-          <ul className="grid grid-cols-1 md:grid-cols-2 gap-12 sm:gap-16">
-            {caseStudies.map((cs, i) => (
-              <WorkCard key={cs.slug} cs={cs} index={i} />
-            ))}
-          </ul>
+          <MacFolderGrid />
         )}
       </section>
 
