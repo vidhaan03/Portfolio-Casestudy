@@ -35,6 +35,8 @@ export type CaseStudy = {
   /** Short, playful one-liners shown as sticky notes when hovering the
    * folder on the landing page. 2–4 work best. */
   quirks?: string[];
+  /** Marks the case study as a work in progress (shows a WIP tag). */
+  wip?: boolean;
 };
 
 export const caseStudies: CaseStudy[] = [
@@ -50,6 +52,7 @@ export const caseStudies: CaseStudy[] = [
     client: "Hoomanlabs",
     cover: "/case-studies/hoomanlabs/cover.png",
     tags: ["Platform", "Redesign", "In progress"],
+    wip: true,
     accent: "#7c3aed",
     quirks: [
       "ground-up redesign 🧱",

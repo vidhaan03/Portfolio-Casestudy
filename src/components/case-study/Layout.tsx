@@ -9,6 +9,7 @@ export function CaseStudyLayout({
   title,
   deck,
   meta,
+  badge,
   children,
 }: {
   slug: string;
@@ -16,18 +17,23 @@ export function CaseStudyLayout({
   title: string;
   deck: React.ReactNode;
   meta: MetaItem[];
+  /** Optional status pill shown top-right of the header (e.g. WIP). */
+  badge?: React.ReactNode;
   children: React.ReactNode;
 }) {
   return (
     <article>
       {/* Header */}
       <header className="mx-auto max-w-3xl px-6 pt-16 pb-12">
-        <Link
-          href="/#work"
-          className="inline-flex items-center text-sm text-neutral-500 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors mb-12"
-        >
-          ← All work
-        </Link>
+        <div className="mb-12 flex items-center justify-between gap-4">
+          <Link
+            href="/#work"
+            className="inline-flex items-center text-sm text-neutral-500 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors"
+          >
+            ← All work
+          </Link>
+          {badge}
+        </div>
         {eyebrow && (
           <p className="text-xs uppercase tracking-[0.18em] text-neutral-500 mb-5 font-medium">
             {eyebrow}

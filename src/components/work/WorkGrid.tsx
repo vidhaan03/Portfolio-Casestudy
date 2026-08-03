@@ -44,6 +44,11 @@ export function WorkGrid() {
                 <span className="ml-2 font-normal text-base text-neutral-400 dark:text-neutral-500">
                   {cs.year}
                 </span>
+                {cs.wip && (
+                  <span className="ml-2 inline-flex items-center rounded-full border border-amber-300 bg-amber-50 px-2 py-0.5 align-middle text-[10px] font-semibold uppercase tracking-[0.1em] text-amber-700 dark:border-amber-500/30 dark:bg-amber-500/10 dark:text-amber-300">
+                    WIP
+                  </span>
+                )}
               </h3>
               <span className="shrink-0 inline-flex items-center gap-1 text-sm text-neutral-400 dark:text-neutral-500 group-hover:text-neutral-900 dark:group-hover:text-neutral-100 transition-colors">
                 View
