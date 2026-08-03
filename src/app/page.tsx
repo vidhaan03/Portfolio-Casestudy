@@ -40,6 +40,28 @@ export default function Home() {
               .
             </p>
           </div>
+
+          <a
+            href="/resume.pdf"
+            download="Vidhan-Dubey-Resume.pdf"
+            className="group mt-8 inline-flex h-11 items-center gap-2 rounded-full bg-neutral-900 px-5 text-sm font-medium text-white transition-colors hover:bg-neutral-700 dark:bg-white dark:text-neutral-900 dark:hover:bg-neutral-200"
+          >
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden
+              className="transition-transform duration-300 ease-out group-hover:translate-y-0.5 motion-reduce:transition-none"
+            >
+              <path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14" />
+            </svg>
+            Download résumé
+          </a>
         </Reveal>
       </section>
     </div>
