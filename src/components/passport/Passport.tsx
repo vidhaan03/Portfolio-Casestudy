@@ -118,7 +118,7 @@ export function PassportBooklet({ className }: { className?: string }) {
       <motion.button
         type="button"
         onClick={open}
-        aria-label="Open Vidhan's passport"
+        aria-label="Open Vidhan's design passport"
         className="group relative block rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900 dark:focus-visible:ring-neutral-100 focus-visible:ring-offset-4"
         style={{
           width: 200,
@@ -210,9 +210,11 @@ export function PassportBooklet({ className }: { className?: string }) {
             </div>
 
             <div className="text-[9px] tracking-[0.22em] opacity-95 mb-0.5">
-              पासपोर्ट
+              डिज़ाइन पासपोर्ट
             </div>
-            <div className="text-lg tracking-[0.42em] font-bold">PASSPORT</div>
+            <div className="text-[15px] tracking-[0.22em] font-bold">
+              DESIGN PASSPORT
+            </div>
           </div>
 
           {/* Diagonal sheen — moves on hover */}
@@ -304,7 +306,7 @@ function PassportPanel({
             <motion.div
               key="passport-spread"
               role="dialog"
-              aria-label="Vidhan Dubey passport"
+              aria-label="Vidhan Dubey design passport"
               initial={
                 reduced
                   ? { opacity: 0 }
@@ -405,9 +407,11 @@ function LeftPage() {
           <AshokaEmblem />
         </div>
         <div className="text-[9px] tracking-[0.32em] opacity-70 mb-0.5">
-          पासपोर्ट
+          डिज़ाइन पासपोर्ट
         </div>
-        <div className="text-base tracking-[0.4em] font-bold">PASSPORT</div>
+        <div className="text-[15px] tracking-[0.22em] font-bold">
+          DESIGN PASSPORT
+        </div>
       </div>
 
       {/* Photo + data */}

@@ -7,10 +7,7 @@ import {
 } from "next/font/google";
 import Link from "next/link";
 import { Cursor } from "@/components/Cursor";
-import {
-  PassportButton,
-  PassportProvider,
-} from "@/components/passport/Passport";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import "./globals.css";
 
 const bricolage = Bricolage_Grotesque({
@@ -49,18 +46,29 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`${bricolage.variable} ${jetbrainsMono.variable} ${caveat.variable} ${patrickHand.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-white text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100">
-        <PassportProvider><Cursor />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `try{var t=localStorage.getItem('theme');if(!t){t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}if(t==='dark'){document.documentElement.classList.add('dark')}}catch(e){}`,
+          }}
+        />
+        <Cursor />
         <header className="sticky top-0 z-40 backdrop-blur-md bg-white/70 dark:bg-neutral-950/70 border-b border-neutral-200/60 dark:border-neutral-800/60">
           <nav className="mx-auto max-w-5xl px-6 h-14 flex items-center justify-between">
-            <PassportButton>Vidhan Dubey</PassportButton>
+            <Link
+              href="/"
+              className="font-medium tracking-tight hover:opacity-80 transition-opacity"
+            >
+              Vidhan Dubey
+            </Link>
             <div className="flex items-center gap-6 text-sm text-neutral-600 dark:text-neutral-400">
               <Link href="/#work" className="hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors">
                 Work
               </Link>
-              <Link href="/#about" className="hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors">
+              <Link href="/about" className="hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors">
                 About
               </Link>
               <Link
@@ -69,6 +77,7 @@ export default function RootLayout({
               >
                 Contact
               </Link>
+              <ThemeToggle />
             </div>
           </nav>
         </header>
@@ -84,7 +93,6 @@ export default function RootLayout({
             </a>
           </div>
         </footer>
-        </PassportProvider>
       </body>
     </html>
   );

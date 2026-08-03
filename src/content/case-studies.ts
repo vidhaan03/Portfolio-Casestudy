@@ -39,6 +39,26 @@ export type CaseStudy = {
 
 export const caseStudies: CaseStudy[] = [
   {
+    slug: "hoomanlabs",
+    href: "/work/hoomanlabs",
+    shortName: "Hoomanlabs",
+    title: "Hoomanlabs, a complete platform redesign",
+    summary:
+      "Rethinking the Hoomanlabs platform end to end, structure, flows, and visual language. Product design work, ongoing since 2026.",
+    role: "Product Designer",
+    year: "2026 — current",
+    client: "Hoomanlabs",
+    cover: "/case-studies/hoomanlabs/cover.png",
+    tags: ["Platform", "Redesign", "In progress"],
+    accent: "#7c3aed",
+    quirks: [
+      "ground-up redesign 🧱",
+      "structure before paint",
+      "shipping surface by surface",
+      "ongoing 2026 →",
+    ],
+  },
+  {
     slug: "motion",
     href: "/work/motion",
     shortName: "motion.saas",
@@ -48,7 +68,7 @@ export const caseStudies: CaseStudy[] = [
     role: "Designer + Builder (solo)",
     year: "2026",
     client: "motion.saas · Indie · OSS",
-    cover: "/case-studies/motion/landing.png",
+    cover: "/case-studies/motion/cover.png",
     tags: ["0→1", "Multi-agent", "Open source"],
     accent: "#0e7490",
     quirks: [
@@ -69,7 +89,7 @@ export const caseStudies: CaseStudy[] = [
     role: "Product & Visual Design",
     year: "2025",
     client: "Plivo · CX Platform",
-    cover: "/case-studies/plivo/10dlc.png",
+    cover: "/case-studies/plivo/cover.png",
     tags: ["Enterprise", "Compliance", "Shipped"],
     accent: "#1e3a8a",
     quirks: [
@@ -89,7 +109,7 @@ export const caseStudies: CaseStudy[] = [
     role: "Design + Co-builder",
     year: "2025",
     client: "Mrig AI",
-    cover: "/case-studies/mrig/tryon.jpeg",
+    cover: "/case-studies/mrig/cover.png",
     tags: ["0→1", "Mobile", "AI"],
     accent: "#9a1b1b",
     quirks: [

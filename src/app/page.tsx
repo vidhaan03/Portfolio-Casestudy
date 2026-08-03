@@ -1,6 +1,5 @@
-import { caseStudies } from "@/content/case-studies";
 import { Hero } from "@/components/hero/Hero";
-import { MacFolderGrid } from "@/components/work/MacFolderGrid";
+import { WorkGrid } from "@/components/work/WorkGrid";
 import { Reveal } from "@/components/Reveal";
 
 export default function Home() {
@@ -11,36 +10,13 @@ export default function Home() {
       {/* Work */}
       <section id="work" className="pb-24 scroll-mt-20">
         <Reveal>
-          <div className="flex items-end justify-between mb-12 gap-6">
-            <div>
-              <p className="text-xs uppercase tracking-[0.18em] text-neutral-500 mb-3 font-medium">
-                Selected work
-              </p>
-              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-neutral-900 dark:text-neutral-50">
-                What I work on
-              </h2>
-            </div>
-            <span className="text-sm text-neutral-500 pb-1">
-              {String(caseStudies.length).padStart(2, "0")} folders
-            </span>
-          </div>
+          <p className="text-xs uppercase tracking-[0.18em] text-neutral-500 mb-10 font-medium">
+            Selected work
+          </p>
         </Reveal>
-
-        {caseStudies.length === 0 ? (
-          <Reveal>
-            <div className="rounded-2xl border border-dashed border-neutral-300 dark:border-neutral-800 p-12 text-center text-neutral-500">
-              <p className="text-sm">
-                No case studies yet. Add entries to{" "}
-                <code className="font-mono text-xs px-1.5 py-0.5 rounded bg-neutral-100 dark:bg-neutral-900">
-                  src/content/case-studies.ts
-                </code>
-                .
-              </p>
-            </div>
-          </Reveal>
-        ) : (
-          <MacFolderGrid />
-        )}
+        <Reveal>
+          <WorkGrid />
+        </Reveal>
       </section>
 
       {/* About */}
