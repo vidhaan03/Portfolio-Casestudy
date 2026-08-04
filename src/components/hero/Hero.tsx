@@ -71,11 +71,11 @@ export function Hero() {
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="text-4xl sm:text-5xl font-medium tracking-tight leading-[1.1]"
         >
-          Design with attention
+          Design it,
           <br />
-          to{" "}
+          then{" "}
           <span className="relative inline-block">
-            people
+            ship it
             <svg
               aria-hidden
               viewBox="0 0 300 24"
@@ -134,7 +134,7 @@ export function Hero() {
                 className="text-2xl leading-none text-[#E24A28] -rotate-[5deg]"
                 style={{ fontFamily: "var(--font-caveat)" }}
               >
-                not personas
+                yes, the real code
               </span>
             </motion.span>
           </span>
@@ -147,7 +147,7 @@ export function Hero() {
           transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
           className="mt-6 text-base sm:text-lg text-neutral-600 dark:text-neutral-400 leading-relaxed"
         >
-          Product designer who designs and ships end-to-end.
+          Product designer who designs and ships end-to-end.{" "}
           <br className="hidden sm:block" />
           Currently at{" "}
           <Link
